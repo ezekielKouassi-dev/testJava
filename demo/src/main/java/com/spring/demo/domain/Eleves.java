@@ -1,5 +1,6 @@
 package com.spring.demo.domain;
 
+import com.spring.demo.dto.EleveDto;
 import com.spring.demo.socle.model.AbstractEntity;
 import org.hibernate.annotations.BatchSize;
 
@@ -34,6 +35,11 @@ public class Eleves extends AbstractEntity {
 		this.id = id;
 		this.nom = nom;
 		this.prenoms = prenoms;
+	}
+
+	public Eleves(EleveDto eleveDto) {
+		this.nom = eleveDto.getNom();
+		this.prenoms = eleveDto.getPrenoms();
 	}
 
 	@Override
